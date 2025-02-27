@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block main %}
+        <div class="form-container">
+            <div class="form-header">
+                <h1>Contact Form</h1><hr>
+            </div>
+            <p>Fill in this form to contact the site owners.</p>
+            <form method="post" autocomplete="off">
+                {{ form.hidden_tag() }}
+                <div class="form-content">
+                    <label for="name"><strong>{{ form.name.label }}</strong> <span class="required-text">(Required)</span></label>                  
+                    <p>Please enter your full name</p>
+                    {{ form.name }}<br><br>
+
+                    <label for="email"><strong>{{ form.email.label }}</strong> <span class="required-text">(Required)</span></label><br>                   
+                    <p>Please enter your email address</p>
+                    {{ form.email }}<br><br>
+    
+                    <label for="subject"><strong>{{ form.subject.label }}</strong> <span class="required-text">(Required)</span></label><br>                   
+                    <p>Please enter the subject for your message.</p>
+                    {{ form.subject }}<br><br>
+    
+                    <label for="message"><strong>{{ form.message.label }}</strong> <span class="required-text">(Required)</span></label><br>                    
+                    <p>Please enter the message you would like to send.</p>
+                    {{ form.message }}<br><br>             
+                    <button type="submit" class="send-button">Send</button>
+                </div>
+            </form>
+        </div>
+    {% endblock %}
+</body>
+</html>
