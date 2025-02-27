@@ -26,7 +26,7 @@ def contact():
         msg = Message(
             request.form['subject'],
             sender=(request.form['name'], request.form['email']),
-            recipients=["your-mailtrap-email@example.com"]
+            recipients=["c96a187d0f-f83ce4@inbox.mailtrap.io"]
         )
         msg.body = request.form['message']
         mail.send(msg)
